@@ -39,6 +39,14 @@ namespace dnd.NET.GUI
 
         protected static class DM
         {
+            public static void NewCampaign() {}
+            public static void StartCampaigns() {}
+            public static void RmCampaign() {}
+            public static void StartDice() {}
+            public static void NewRace() {}
+            public static void ExportRaces() {}
+            public static void NewClass() {}
+            public static void ExportClasses() {}
         }
     }
 }

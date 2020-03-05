@@ -62,6 +62,17 @@ namespace dnd.NET.GUI
             MainLinkLabel iclass = new MainLinkLabel("Import Class", new Point(15, 225), (o, e) => Player.ImportClass());
             MainLinkLabel dclass = new MainLinkLabel("Disable Class", new Point(15, 245), (o, e) => Player.DisableClass());
 
+            MainLinkLabel ncmp = new MainLinkLabel("New Campaign", new Point(15, 25), (o, e) => DM.NewCampaign());
+            MainLinkLabel cmps = new MainLinkLabel("My Campaigns", new Point(15, 45), (o, e) => DM.StartCampaigns());
+            MainLinkLabel dcmp = new MainLinkLabel("Remove Campaign", new Point(15, 65), (o, e) => DM.RmCampaign());
+            MainLinkLabel diceD = new MainLinkLabel("Roll Dice", new Point(15, 85), (o, e) => DM.StartDice());
+            MainLinkLabel racesD = new MainLinkLabel("Race Overview", new Point(15, 125), (o, e) => Both.StartRace());
+            MainLinkLabel nrace = new MainLinkLabel("Create Race", new Point(15, 145), (o, e) => DM.NewRace());
+            MainLinkLabel erace = new MainLinkLabel("Export Race List", new Point(15, 165), (o, e) => DM.ExportRaces());
+            MainLinkLabel classsD = new MainLinkLabel("Class Overview", new Point(15, 205), (o, e) => Both.StartClass());
+            MainLinkLabel nclass = new MainLinkLabel("Create Class", new Point(15, 225), (o, e) => DM.NewClass());
+            MainLinkLabel eclass = new MainLinkLabel("Export Classes", new Point(15, 245), (o, e) => DM.ExportClasses());
+
             PlayerBox.Controls.Add(chrs);
             PlayerBox.Controls.Add(dice);
             PlayerBox.Controls.Add(nchr);
@@ -72,6 +83,18 @@ namespace dnd.NET.GUI
             PlayerBox.Controls.Add(classs);
             PlayerBox.Controls.Add(iclass);
             PlayerBox.Controls.Add(dclass);
+            
+            DMBox.Controls.Add(ncmp);
+            DMBox.Controls.Add(cmps);
+            DMBox.Controls.Add(dcmp);
+            DMBox.Controls.Add(diceD);
+            DMBox.Controls.Add(racesD);
+            DMBox.Controls.Add(nrace);
+            DMBox.Controls.Add(erace);
+            DMBox.Controls.Add(classsD);
+            DMBox.Controls.Add(nclass);
+            DMBox.Controls.Add(eclass);
+
             this.Controls.Add(DMBox);
             this.Controls.Add(PlayerBox);
             this.Controls.Add(Header);

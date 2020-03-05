@@ -24,17 +24,17 @@ namespace dnd.NET.GUI
             public static void StartDice(){ new DiceForm(DiceForm.Action.player).ShowDialog(); }
             public static void RmChar() { new PlayerForm(PlayerForm.Action.rm).ShowDialog(); }
 
-            public static void ImportRace() {}
-            public static void DisableRace() {}
+            public static void ImportRace() { new RaceView(RaceView.Action.pull).ShowDialog(); }
+            public static void DisableRace() { new RaceView(RaceView.Action.rm).ShowDialog(); }
 
-            public static void ImportClass() {}
-            public static void DisableClass() {}
+            public static void ImportClass() { new ClassView(ClassView.Action.pull).ShowDialog(); }
+            public static void DisableClass() { new ClassView(ClassView.Action.rm).ShowDialog(); }
         }
 
         protected static class Both
         {
-            public static void StartRace() {}
-            public static void StartClass() {}
+            public static void StartRace() { new RaceView(RaceView.Action.ls).ShowDialog(); }
+            public static void StartClass() { new ClassView(ClassView.Action.ls).ShowDialog(); }
         }
 
         protected static class DM
@@ -43,10 +43,12 @@ namespace dnd.NET.GUI
             public static void StartCampaigns() { new DMView(DMView.Action.ls).ShowDialog(); }
             public static void RmCampaign() { new DMView(DMView.Action.rm).ShowDialog(); }
             public static void StartDice() { new DiceForm(DiceForm.Action.dm).ShowDialog(); }
-            public static void NewRace() {}
-            public static void ExportRaces() {}
-            public static void NewClass() {}
-            public static void ExportClasses() {}
+
+            public static void NewRace() { new RaceView(RaceView.Action.touch).ShowDialog(); }
+            public static void ExportRaces() { new RaceView(RaceView.Action.push).ShowDialog(); }
+
+            public static void NewClass() { new ClassView(ClassView.Action.touch).ShowDialog(); }
+            public static void ExportClasses() { new ClassView(ClassView.Action.push).ShowDialog(); }
         }
     }
 }

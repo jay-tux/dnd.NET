@@ -1,4 +1,4 @@
-﻿namespace formTemplate
+﻿namespace dnd.NET.GUI
 {
     partial class ClassView
     {

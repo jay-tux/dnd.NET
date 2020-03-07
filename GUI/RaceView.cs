@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace formTemplate
+namespace dnd.NET.GUI
 {
     public partial class RaceView : Form
     {
-        public static enum Action { ls, touch, rm, pull, push }
+        public enum Action { ls, touch, rm, pull, push }
         public RaceView(Action Action)
         {
             InitializeComponent();

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace formTemplate
+namespace dnd.NET.GUI
 {
     public partial class DiceForm : Form
     {
-        public static enum Action { player, dm }
+        public enum Action { player, dm }
         public DiceForm(Action Action)
         {
             InitializeComponent();

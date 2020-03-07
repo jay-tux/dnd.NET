@@ -30,12 +30,14 @@ namespace dnd.NET.GUI
 
     public class MainLinkLabel : LinkLabel
     {
-        public MainLinkLabel(string Text, Point Location, EventHandler handler, bool Bold = false, bool Italic = false)
+        public MainLinkLabel(string Text, Point Location, EventHandler handler, bool Bold = false, bool Italic = false, bool Emphasis = false)
         {
             this.Text = Text;
             this.Location = Location;
             this.AutoSize = true;
-            this.Font = Bold ? DefaultFonts.BoldFont : (Italic ? DefaultFonts.ItalicFont : DefaultFonts.TextFont);
+            this.Font = Emphasis ? DefaultFonts.EmphasisFont : 
+                (Bold ? DefaultFonts.BoldFont : 
+                (Italic ? DefaultFonts.ItalicFont : DefaultFonts.TextFont));
             this.ForeColor = DefaultColors.TextColor;
             this.LinkColor = DefaultColors.TextColor;
             this.VisitedLinkColor = DefaultColors.TextColor;

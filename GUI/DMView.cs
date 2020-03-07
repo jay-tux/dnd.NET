@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace formTemplate
+namespace dnd.NET.GUI
 {
     public partial class DMView : Form
     {
-        public static enum Action { touch, ls, rm }
+        public enum Action { touch, ls, rm }
         public DMView(Action Action)
         {
             InitializeComponent();

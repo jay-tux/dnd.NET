@@ -30,7 +30,7 @@ while getopts 'crh' opt; do
 done
 
 if [[ $compile == 'true' ]]; then
-	mcs -r:System.Drawing -r:System.Windows.Forms -out:bin/dnd.NET.exe -main:dnd.NET.Program *.cs DM/*.cs GUI/*.cs Player/*.cs 
+	mcs -r:System.Data -r:System.Drawing -r:System.Windows.Forms -out:bin/dnd.NET.exe -main:dnd.NET.Program *.cs DM/*.cs GUI/*.cs Player/*.cs 
 	if [[ $? != 0 ]]; then
 		>&2 echo "Failed to compile." 
 		exit -1

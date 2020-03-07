@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using System.Collections.Generic;
 using System;
 using System.Drawing;
 
@@ -38,7 +39,7 @@ namespace dnd.NET.GUI
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 400);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Text = "D&D 5e DM/Player Suite";
             this.BackColor = DefaultColors.BackColor;
             this.Paint += ResizeTools;
@@ -51,27 +52,34 @@ namespace dnd.NET.GUI
             PlayerBox = new StyledGroupBox("Player Tools", 
                 new Size((int)(Size.Width / 2 * 0.9), (int)(Size.Height * 0.75)), 
                 new Point((int)(Size.Width / 2), (int)(0.1 * Size.Height)));
-            MainLinkLabel nchr = new MainLinkLabel("New Character", new Point(15, 25), (o, e) => Player.NewChar());
-            MainLinkLabel chrs = new MainLinkLabel("My Characters", new Point(15, 45), (o, e) => Player.StartChars());
-            MainLinkLabel dchr = new MainLinkLabel("Remove Character", new Point(15, 65), (o, e) => Player.RmChar());
-            MainLinkLabel dice = new MainLinkLabel("Roll Dice", new Point(15, 85), (o, e) => Player.StartDice());
-            MainLinkLabel races = new MainLinkLabel("Race Overview", new Point(15, 125), (o, e) => Both.StartRace());
-            MainLinkLabel irace = new MainLinkLabel("Import Race", new Point(15, 145), (o, e) => Player.ImportRace());
-            MainLinkLabel drace = new MainLinkLabel("Disable Race", new Point(15, 165), (o, e) => Player.DisableRace());
-            MainLinkLabel classs = new MainLinkLabel("Class Overview", new Point(15, 205), (o, e) => Both.StartClass());
-            MainLinkLabel iclass = new MainLinkLabel("Import Class", new Point(15, 225), (o, e) => Player.ImportClass());
-            MainLinkLabel dclass = new MainLinkLabel("Disable Class", new Point(15, 245), (o, e) => Player.DisableClass());
+            
+            MainLinkLabel chrs = new MainLinkLabel("My Characters", new Point(15, 25), (o, e) => Player.StartChars(), false, false, true);
+            MainLinkLabel nchr = new MainLinkLabel("New Character", new Point(25, 45), (o, e) => Player.NewChar());
+            MainLinkLabel dchr = new MainLinkLabel("Remove Character", new Point(25, 65), (o, e) => Player.RmChar());
 
-            MainLinkLabel ncmp = new MainLinkLabel("New Campaign", new Point(15, 25), (o, e) => DM.NewCampaign());
-            MainLinkLabel cmps = new MainLinkLabel("My Campaigns", new Point(15, 45), (o, e) => DM.StartCampaigns());
-            MainLinkLabel dcmp = new MainLinkLabel("Remove Campaign", new Point(15, 65), (o, e) => DM.RmCampaign());
-            MainLinkLabel diceD = new MainLinkLabel("Roll Dice", new Point(15, 85), (o, e) => DM.StartDice());
-            MainLinkLabel racesD = new MainLinkLabel("Race Overview", new Point(15, 125), (o, e) => Both.StartRace());
-            MainLinkLabel nrace = new MainLinkLabel("Create Race", new Point(15, 145), (o, e) => DM.NewRace());
-            MainLinkLabel erace = new MainLinkLabel("Export Race List", new Point(15, 165), (o, e) => DM.ExportRaces());
-            MainLinkLabel classsD = new MainLinkLabel("Class Overview", new Point(15, 205), (o, e) => Both.StartClass());
-            MainLinkLabel nclass = new MainLinkLabel("Create Class", new Point(15, 225), (o, e) => DM.NewClass());
-            MainLinkLabel eclass = new MainLinkLabel("Export Classes", new Point(15, 245), (o, e) => DM.ExportClasses());
+            MainLinkLabel dice = new MainLinkLabel("Roll Dice", new Point(15, 105), (o, e) => Player.StartDice(), false, false, true);
+            
+            MainLinkLabel races = new MainLinkLabel("Race Overview", new Point(15, 145), (o, e) => Both.StartRace(), false, false, true);
+            MainLinkLabel irace = new MainLinkLabel("Import Race", new Point(25, 165), (o, e) => Player.ImportRace());
+            MainLinkLabel drace = new MainLinkLabel("Disable Race", new Point(25, 185), (o, e) => Player.DisableRace());
+
+            MainLinkLabel classs = new MainLinkLabel("Class Overview", new Point(15, 225), (o, e) => Both.StartClass(), false, false, true);
+            MainLinkLabel iclass = new MainLinkLabel("Import Class", new Point(25, 245), (o, e) => Player.ImportClass());
+            MainLinkLabel dclass = new MainLinkLabel("Disable Class", new Point(25, 265), (o, e) => Player.DisableClass());
+
+            MainLinkLabel cmps = new MainLinkLabel("My Campaigns", new Point(15, 25), (o, e) => DM.StartCampaigns(), false, false, true);
+            MainLinkLabel ncmp = new MainLinkLabel("New Campaign", new Point(25, 45), (o, e) => DM.NewCampaign());
+            MainLinkLabel dcmp = new MainLinkLabel("Remove Campaign", new Point(25, 65), (o, e) => DM.RmCampaign());
+
+            MainLinkLabel diceD = new MainLinkLabel("Roll Dice", new Point(15, 105), (o, e) => DM.StartDice(), false, false, true);
+
+            MainLinkLabel racesD = new MainLinkLabel("Race Overview", new Point(15, 145), (o, e) => Both.StartRace(), false, false, true);
+            MainLinkLabel nrace = new MainLinkLabel("Create Race", new Point(25, 165), (o, e) => DM.NewRace());
+            MainLinkLabel erace = new MainLinkLabel("Export Race List", new Point(25, 185), (o, e) => DM.ExportRaces());
+            
+            MainLinkLabel classsD = new MainLinkLabel("Class Overview", new Point(15, 225), (o, e) => Both.StartClass(), false, false, true);
+            MainLinkLabel nclass = new MainLinkLabel("Create Class", new Point(25, 245), (o, e) => DM.NewClass());
+            MainLinkLabel eclass = new MainLinkLabel("Export Classes", new Point(25, 265), (o, e) => DM.ExportClasses());
 
             PlayerBox.Controls.Add(chrs);
             PlayerBox.Controls.Add(dice);

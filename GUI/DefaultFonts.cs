@@ -21,5 +21,6 @@ namespace dnd.NET.GUI
         public static Color TextColor = Color.FromArgb(29, 4, 191);
         public static Color BorderColor = Color.FromArgb(80, 5, 242);
         public static Color EmphasisColor = Color.FromArgb(80, 5, 242);
+        public static Color ButtonColor = Color.FromArgb(5, 2, 89);
     }
 }

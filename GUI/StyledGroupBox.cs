@@ -57,7 +57,7 @@ namespace dnd.NET.GUI
                 int width = (int)rect.Width, posX;
                 posX = (this.TextIndent < 0) ? Math.Max(0-width,this.TextIndent) : Math.Min(width, this.TextIndent);
                 posX = (posX < 0) ? rect.Width + posX - (int)strSize.Width : posX;
-                g.FillRectangle(labelBrush, posX, 0, strSize.Width, strSize.Height);
+                g.FillRectangle(labelBrush, posX - 2, 0, strSize.Width + 4, strSize.Height);
                 g.DrawString(this.Text, this.Font, textBrush, posX, 0);
             }
         }

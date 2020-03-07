@@ -1,4 +1,6 @@
-﻿namespace dnd.NET.GUI
+﻿using System.Drawing;
+
+namespace dnd.NET.GUI
 {
     partial class PlayerForm
     {

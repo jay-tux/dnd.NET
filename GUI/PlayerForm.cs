@@ -18,5 +18,8 @@ namespace dnd.NET.GUI
             InitializeComponent();
         }
 
+        protected void CreateChar(){}
+        protected void DeleteChar(){}
+
     }
 }

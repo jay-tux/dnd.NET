@@ -15,8 +15,6 @@ namespace dnd.NET.GUI
             this.Font = DefaultFonts.ButtonFont;
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderColor = DefaultColors.EmphasisColor;
-            this.Padding = new Padding(6);
-            this.Margin = new Padding(6);
             this.BackColor = DefaultColors.ButtonColor;
             this.ForeColor = DefaultColors.TextColor;
         }

@@ -17,12 +17,10 @@ namespace dnd.NET.GUI
             BackColor = DefaultColors.BackColor;
             this.Text = Text;
             Font = DefaultFonts.GroupBoxFont;
-            Padding = new Padding(12);
-            Margin = new Padding(12);
             ForeColor = DefaultColors.HeaderColor;
-            Paint += Border;
             this.Size = Size;
             this.Location = Location;
+            Paint += Border;
         }
 
         protected void Border(object sender, EventArgs e)

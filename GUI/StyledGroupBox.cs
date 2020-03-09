@@ -13,7 +13,7 @@ namespace dnd.NET.GUI
 
         public StyledGroupBox(string Text, Size Size, Point Location)
         {
-            AutoSize = true;
+            //AutoSize = true;
             BackColor = DefaultColors.BackColor;
             this.Text = Text;
             Font = DefaultFonts.GroupBoxFont;

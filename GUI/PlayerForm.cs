@@ -20,6 +20,10 @@ namespace dnd.NET.GUI
 
         protected void CreateChar(){}
         protected void DeleteChar(){}
-
+        protected void ViewChar(){}
+        protected void RollFor(){}
+        protected void Export(){}
+        protected void Level(){}
+        protected void EditChar(){}
     }
 }
